@@ -16,7 +16,7 @@ def load_koalpaca(model_name='EXAONE-3-INST'):
         'text-generation', 
         torch_dtype=torch.bfloat16, 
         model=KOALPACA_MODEL_PATH[model_name], 
-        # tokenizer=KOALPACA_MODEL_PATH[model_name],
+        tokenizer=KOALPACA_MODEL_PATH[model_name],
         device_map="auto", 
         trust_remote_code=True)
     pipe.model.config.pad_token_id = pipe.model.config.eos_token_id
