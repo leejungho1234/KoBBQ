@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     if not args.data_path.endswith('.json'):
         raise ValueError
-
+    print(args.data_path)
     data_path = Path(args.data_path)
     topic = data_path.name.replace('.json', '')
     print(topic)
