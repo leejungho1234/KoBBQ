@@ -39,7 +39,7 @@ def get_koalpaca_response(
         for idx, out in enumerate(tqdm(pipe(prompt, batch_size=batch_size, max_new_tokens=max_tokens), total=len(prompt))):
             raw = out[0]['generated_text'][0]
             
-            result.append(raw['content'][-1])
+            result.append(raw['content'])
     except Exception as e:
         print(e)
     return result
