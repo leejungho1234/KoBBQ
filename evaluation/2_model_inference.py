@@ -45,7 +45,7 @@ if __name__ == "__main__":
     
     model_name = args.model_name
 
-    if args.batch_size != 1 and model_name not in ['clova-x', 'KoAlpaca-Polyglot-12.8B']:
+    if args.batch_size != 1 and model_name not in ['clova-x', 'EXAONE-3-INST']:
         raise NotImplementedError
 
     koalpaca = None
