@@ -32,6 +32,7 @@ def get_koalpaca_response(
 ):
     assert model_name in KOALPACA_MODEL
     result = []
+    breakpoint()
     try:
         for idx, out in enumerate(tqdm(pipe(prompt, batch_size=batch_size, max_new_tokens=max_tokens), total=len(prompt))):
             raw = out[0]['generated_text']
