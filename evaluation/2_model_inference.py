@@ -98,14 +98,13 @@ if __name__ == "__main__":
                 max_tokens=args.max_tokens
             )]
         elif model_name in KOALPACA_MODEL:
-            with model.device_replacement():
-                result = get_koalpaca_response(
-                    prompt,
-                    model_name,
-                    koalpaca,
-                    max_tokens=args.max_tokens,
-                    batch_size=args.batch_size
-                )
+            result = get_koalpaca_response(
+                prompt,
+                model_name,
+                koalpaca,
+                max_tokens=args.max_tokens,
+                batch_size=args.batch_size
+            )
         else:
             raise ValueError(model_name)
         

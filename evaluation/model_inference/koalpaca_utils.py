@@ -35,10 +35,11 @@ def get_koalpaca_response(
     prompt = [[{'role':'user', 'content':p}] for p in prompt]
     result = []
     
-    try:
-        for idx, out in enumerate(pipe(prompt, batch_size=batch_size, max_new_tokens=max_tokens)):
-            raw = out[0]['generated_text'][-1]
-            result.append(raw['content'])
-    except Exception as e:
-        print(e)
+    with pipe.device_replacement():
+        try:
+            for idx, out in enumerate(pipe(prompt, batch_size=batch_size, max_new_tokens=max_tokens)):
+                raw = out[0]['generated_text'][-1]
+                result.append(raw['content'])
+        except Exception as e:
+            print(e)
     return result
