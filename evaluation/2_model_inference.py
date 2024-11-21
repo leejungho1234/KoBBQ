@@ -107,7 +107,7 @@ if __name__ == "__main__":
             )
         else:
             raise ValueError(model_name)
-        breakpoint()
+        
         for i, instance in enumerate(instances):
             open_trial = 0
             while True:
