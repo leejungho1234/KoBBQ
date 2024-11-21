@@ -37,13 +37,7 @@ def get_koalpaca_response(
     
     try:
         for idx, out in enumerate(tqdm(pipe(prompt, batch_size=batch_size, max_new_tokens=max_tokens), total=len(prompt))):
-            raw = out[0]['generated_text']
-            import json
-            with open('./temp.json', 'w', encoding='utf-8') as wf:
-                json.dump(raw, wf, indent='\t', ensure_ascii=False)
-            import sys
-            sys.exit(2)
-            
+            raw = out[0]['generated_text'][-1]
             result.append(raw['content'])
     except Exception as e:
         print(e)
