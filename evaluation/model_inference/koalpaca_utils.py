@@ -21,7 +21,7 @@ def load_koalpaca(model_name='EXAONE-3-INST'):
         device_map="auto", 
         trust_remote_code=True)
     # pipe.model.config.pad_token_id = pipe.model.config.eos_token_id
-    # pipe.tokenizer.padding_side = 'right'
+    pipe.tokenizer.padding_side = 'left'
     return pipe
 
 def get_koalpaca_response(
