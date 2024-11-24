@@ -7,7 +7,7 @@ python3 5_evaluation.py \
     --model-result-tsv-dir ../outputs/processed/KoBBQ_all_$PROMPT_ID \
     --topic KoBBQ_all_evaluation \
     --test-or-all all \
-    --prompt-tsv-path 0_evaluation_prompts.tsv \
+    --prompt-tsv-path ../0_evaluation_prompts.tsv \
     --prompt-id $PROMPT_ID \
     --models $MODELS
 done
