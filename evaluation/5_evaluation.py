@@ -10,6 +10,7 @@ import argparse
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from tqdm import tqdm
 
 
 def parse_args():
